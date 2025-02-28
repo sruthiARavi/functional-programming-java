@@ -15,7 +15,7 @@ public class FP01Functional {
         printAllCourses(courses);
         printSpecificCourse("Spring", courses);
         printCourseWithCriteria(4, courses);
-
+        printCharCountForEachCourse(courses);
     }
 
     private static void numPrint(int num) {
@@ -74,6 +74,13 @@ public class FP01Functional {
     private static void printCourseWithCriteria(int minLetterCount, List<String> courses) {
         courses.stream()
                 .filter(course -> course.length() >= minLetterCount)
+                .forEach(System.out::println);
+    }
+
+    private static void printCharCountForEachCourse(List<String> courses) {
+        courses.stream()
+                //.map(course -> course.length())
+                .map(String::length)
                 .forEach(System.out::println);
     }
 }
