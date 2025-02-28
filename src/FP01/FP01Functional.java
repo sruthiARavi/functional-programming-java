@@ -57,7 +57,7 @@ public class FP01Functional {
     private static void printCubesOfOddNumbersInListFunctional(List<Integer> nums) {
         nums.stream()
                 .filter(num -> num % 2 != 0)
-                .map(num -> num * num * num)
+                .map(num -> num + " : " + num * num * num)
                 .forEach(System.out::println);
     }
 
