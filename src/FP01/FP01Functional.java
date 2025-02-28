@@ -7,7 +7,9 @@ public class FP01Functional {
         List<Integer> nums = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
         printAllNumbersInListFunctional(nums);
         printAllEvenNumbersInListFunctional(nums);
+        printSquaresOfEvenNumbersInListFunctional(nums);
         printAllOddNumbersInListFunctional(nums);
+        printCubesOfOddNumbersInListFunctional(nums);
 
         List<String> courses = List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernetes");
         printAllCourses(courses);
@@ -38,9 +40,24 @@ public class FP01Functional {
                 .forEach(System.out::println);
     }
 
+    private static void printSquaresOfEvenNumbersInListFunctional(List<Integer> nums) {
+        nums.stream()
+                .filter(num -> num % 2 == 0)
+                //mapping
+                .map(num -> num * num)
+                .forEach(System.out::println);
+    }
+
     private static void printAllOddNumbersInListFunctional(List<Integer> nums) {
         nums.stream()
                 .filter(num -> num % 2 != 0)
+                .forEach(System.out::println);
+    }
+
+    private static void printCubesOfOddNumbersInListFunctional(List<Integer> nums) {
+        nums.stream()
+                .filter(num -> num % 2 != 0)
+                .map(num -> num * num * num)
                 .forEach(System.out::println);
     }
 
